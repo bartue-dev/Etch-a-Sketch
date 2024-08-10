@@ -5,11 +5,63 @@ for(i = 0; i < 1500; i++){
   squares.classList.add("square")
   main.appendChild(squares);
 
-  squares.addEventListener("mouseover", e => {
-    if (e.buttons === 1) {
-      squares.style.backgroundColor = `${getRandomRgb()}`;
-    }
-  });
+  //default mouse color if not select any color button
+  const defaultMouseColor = () => {
+    squares.addEventListener("mouseover", e => {
+      e.preventDefault();
+      if (e.buttons === 1) {
+        squares.style.backgroundColor = "black";
+      }
+    });
+  }
+
+  //if button prism selected it assign the random color into the cursor
+  const prism = () => {
+    const prism = document.querySelector(".btn-prism");
+
+    prism.addEventListener("click", () => {
+      squares.addEventListener("mouseover", e => {
+        e.preventDefault();
+        if (e.buttons === 1) {
+          squares.style.backgroundColor = `${getRandomRgb()}`;
+        }
+      });
+    })
+  }
+
+  //if pen button is selected it assign a black color into the cursor
+  const pen = () => {
+    const pen = document.querySelector(".btn-pen");
+
+    pen.addEventListener("click", () =>{
+      squares.addEventListener("mouseover", e => {
+        e.preventDefault();
+        if (e.buttons === 1) {
+          squares.style.backgroundColor = "black";
+        }
+      });
+    })
+  }
+  
+  //if eraser button is selected it will assign a white color into the cursor
+  const eraser = () => {
+    const eraser = document.querySelector(".btn-eraser");
+
+    eraser.addEventListener("click", () => {
+      squares.addEventListener("mouseover", e => {
+        e.preventDefault();
+        if (e.buttons === 1) {
+          squares.style.backgroundColor = "white";
+        }
+      });
+    })
+  }
+
+  //call all the buttons function as well as the default function
+  defaultMouseColor();
+  prism();
+  pen();
+  eraser();
 }
 
 function getRandomRgb(){
@@ -20,6 +72,7 @@ function getRandomRgb(){
   return `rgb(${r},${g},${b})`;
 }
 
-console.log(getRandomRgb())
+
+
 
 
