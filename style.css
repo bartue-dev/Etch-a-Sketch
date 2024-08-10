@@ -5,7 +5,10 @@
 }
 
 body{
-  background-color: rgb(247, 247, 247)
+  background-color: rgb(247, 247, 247);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 main {
