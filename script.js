@@ -5,6 +5,21 @@ for(i = 0; i < 1500; i++){
   squares.classList.add("square")
   main.appendChild(squares);
 
+ 
+  const colorPicker = document.querySelector("#input-color-picker");
+  colorPicker.addEventListener("input", () => {
+    console.log(colorPicker.value)
+    const colorValue = colorPicker.value
+  
+    squares.addEventListener("mouseover", e => {
+      e.preventDefault();
+      if (e.buttons === 1) {
+        squares.style.backgroundColor = `${colorValue}`;
+      }
+    });
+    
+  })
+
   //default mouse color if not select any color button
   const defaultMouseColor = () => {
     squares.addEventListener("mouseover", e => {
@@ -71,6 +86,7 @@ function getRandomRgb(){
   let b = num & 255;
   return `rgb(${r},${g},${b})`;
 }
+
 
 
 
