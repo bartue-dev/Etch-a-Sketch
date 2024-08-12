@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -9,13 +11,17 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
 main {
-  display: flex;
+ /*  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 0;
+  margin: 0;
+  padding: 0; */
 
   width: 51em;
   height: 32em;
@@ -24,11 +30,106 @@ main {
   border: 1px solid transparent;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: white;
+  overflow: hidden;
 }
 
-.square{
+/* .square{
   flex-basis: 16px;
   height: 16px;
   background-color: white;
+  border: 1px solid black;
+  margin: 0;
+} */
+
+/* style the settings container of the page */
+
+.settings {
+  width: 28em;
+  height: 32em;
+  margin: 40px 35px 0 0;
+  border: 1px solid black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.settings .title {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.settings .color-selection {
+  width: 100%;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.settings .pen-prism {
+  width: 100%;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings .color-selection button {
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  outline: none;
+  width: 100px;
+  cursor: pointer;
+}
+
+.color-picker {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  font-size: 1.5rem;
+}
+
+#input-color-picker {
+  width: 4rem;
+  height: 4rem;
+}
+
+input[type="color" i] {
+  border-radius: 50%;
+  inline-size: 30px;
+  block-size: 30px;
+  
+  /* Can set padding between outer circle and color swatch for Firefox here;
+   * it doesn't support a color-swarch-wrapper pseudoclass
+   */
+  padding: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(153, 153, 153);
+}
+
+/* Affects area between outer circle and color swatch. Firefox doesn't have an equivalent. */
+input[type="color" i]::-webkit-color-swatch-wrapper {
+  padding: 1px;
+}
+
+/* Affects the inner circle, i.e. the current color selection */
+input[type="color" i]::-webkit-color-swatch {
+  border-radius: 50%;
+}
+
+input[type="color" i]::-moz-color-swatch {
+  border-radius: 50%;
+}
+
 
