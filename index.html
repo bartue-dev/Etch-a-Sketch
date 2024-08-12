@@ -14,23 +14,34 @@
     <!-- elements here generated in JavaScript -->
   </main>
 
-  <section class="selector-container">
+  <section class="settings">
     <div class="title">
       <h3>Etch-a-Sketch</h3>
     </div>
     <div class="color-selection">
+
       <div class="color-picker">
+        <label for="input-color-picker">Pick a color:</label>
         <input name="color" id="input-color-picker" value="#e8e117" type="color">
       </div>
-      <div class="pen">
-        <button class="btn-pen">Pen</button>
-      </div>
-      <div class="prism">
-        <button class="btn-prism">Prism</button>
-      </div>
+
       <div class="eraser">
         <button class="btn-eraser">Eraser</button>
       </div>
+
+      <div class="pen-prism">
+        <div class="pen">
+          <button class="btn-pen">Pen</button>
+        </div>
+        <div class="prism">
+          <button class="btn-prism">Prism</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="slider-container">
+      <input type="range" min="3" max="64" value="64" class="input-slider">
     </div>
 
   </section>
