@@ -116,7 +116,27 @@ function getRandomRgb(){
 }
 
 slider.addEventListener("change", sliderDOM);
-window.addEventListener("load", sliderDOM)
+window.addEventListener("load", sliderDOM);
+
+const guideBtn = document.querySelector(".guide-btn");
+const dialog = document.querySelector("dialog");
+
+guideBtn.addEventListener("click", () => {
+  console.log("guide button is clicked")
+  dialog.showModal()
+});
+
+dialog.addEventListener("click", e => {
+  const dialogDimensions = dialog.getBoundingClientRect()
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    dialog.close()
+  }
+})
 
 
 

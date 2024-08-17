@@ -12,6 +12,7 @@ body{
   justify-content: space-between;
   align-items: center;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
+  position: relative;
 }
 
 main {
@@ -130,6 +131,43 @@ input[type="color" i]::-webkit-color-swatch {
 
 input[type="color" i]::-moz-color-swatch {
   border-radius: 50%;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.5rem;
+}
+
+.guide-btn{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-top: 3rem;
+  margin-left: 24rem;
+  cursor: pointer;
+}
+
+dialog div{
+  font-size: 1.5rem;
+}
+
+dialog .title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+dialog .mouse {
+  margin-top: 20px;
+}
+
+dialog{
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid black;
 }
 
 
