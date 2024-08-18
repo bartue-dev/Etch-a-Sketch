@@ -32,9 +32,17 @@
   
         main.appendChild(squares);
       
-      
+
         const colorPicker = document.querySelector("#input-color-picker");
         colorPicker.addEventListener("input", () => {
+
+          squares.addEventListener("mousedown", e => {
+            e.preventDefault();
+            if (e.buttons === 1) {
+              squares.style.backgroundColor = `${colorValue}`;
+            }
+          })
+
           console.log(colorPicker.value)
           const colorValue = colorPicker.value
         
@@ -49,6 +57,14 @@
       
         //default mouse color if not select any color button
         const defaultMouseColor = () => {
+
+         squares.addEventListener("mousedown", e => {
+            e.preventDefault();
+            if (e.buttons === 1) {
+              squares.style.backgroundColor = "black";
+            }
+          });
+
           squares.addEventListener("mouseover", e => {
             e.preventDefault();
             if (e.buttons === 1) {
@@ -60,8 +76,15 @@
         //if button prism selected it assign the random color into the cursor
         const prism = () => {
           const prism = document.querySelector(".btn-prism");
-      
           prism.addEventListener("click", () => {
+            
+            squares.addEventListener("mousedown", e => {
+              e.preventDefault();
+              if (e.buttons === 1) {
+                squares.style.backgroundColor = `${getRandomRgb()}`;
+              }
+            });
+
             squares.addEventListener("mouseover", e => {
               e.preventDefault();
               if (e.buttons === 1) {
@@ -76,6 +99,14 @@
           const pen = document.querySelector(".btn-pen");
       
           pen.addEventListener("click", () =>{
+
+            squares.addEventListener("mousedown", e => {
+              e.preventDefault();
+              if (e.buttons === 1) {
+                squares.style.backgroundColor = "black";
+              }
+            });
+
             squares.addEventListener("mouseover", e => {
               e.preventDefault();
               if (e.buttons === 1) {
@@ -89,7 +120,15 @@
         const eraser = () => {
           const eraser = document.querySelector(".btn-eraser");
       
+          squares.addEventListener("mousedown", e => {
+            e.preventDefault();
+            if (e.buttons === 1) {
+              squares.style.backgroundColor = "white";
+            }
+          });
+
           eraser.addEventListener("click", () => {
+            squaresMousedown();
             squares.addEventListener("mouseover", e => {
               e.preventDefault();
               if (e.buttons === 1) {
