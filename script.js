@@ -120,15 +120,13 @@
         const eraser = () => {
           const eraser = document.querySelector(".btn-eraser");
       
-          squares.addEventListener("mousedown", e => {
-            e.preventDefault();
-            if (e.buttons === 1) {
-              squares.style.backgroundColor = "white";
-            }
-          });
-
           eraser.addEventListener("click", () => {
-            squaresMousedown();
+            squares.addEventListener("mousedown", e => {
+              e.preventDefault();
+              if (e.buttons === 1) {
+                squares.style.backgroundColor = "white";
+              }
+            });
             squares.addEventListener("mouseover", e => {
               e.preventDefault();
               if (e.buttons === 1) {
